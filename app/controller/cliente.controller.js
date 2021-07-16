@@ -16,7 +16,7 @@ exports.create = (req, res) => {
     const cliente = {
       nomeCliente: req.body.nome,
       cpfCliente: req.body.cpf,
-      dataNasimentoCliente: req.body.dataNasimentoCliente,
+      dataNasimentoCliente: req.body.data_nascimento,
       published: req.body.published ? req.body.published : false
     };
   

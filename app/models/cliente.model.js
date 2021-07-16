@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       dataNascimentoCliente: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE
       },
       published: {
         type: Sequelize.BOOLEAN
