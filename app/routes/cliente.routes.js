@@ -5,7 +5,7 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Create a new Tutorial
-    router.post("/cliente", cliente.create);
+    router.post("/", cliente.create);
   
     // Retrieve all Tutorials
     router.get("/", cliente.findAll);
@@ -25,5 +25,5 @@ module.exports = app => {
     // Delete all Tutorials
     router.delete("/", cliente.deleteAll);
   
-    app.use('/cliente/', router);
+    app.use('/api/cliente', router);
   };
