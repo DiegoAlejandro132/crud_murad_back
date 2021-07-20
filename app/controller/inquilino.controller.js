@@ -38,7 +38,7 @@ exports.findAll = (req, res) => {
   const cpfInquilino = req.query.cpfInquilino;
   var condition = cpfInquilino ? { cpfInquilino: { [Op.like]: `%${cpfInquilino}%` } } : null;
 
-  Tutorial.findAll({ where: condition })
+  Inquilino.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
@@ -50,11 +50,11 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single Tutorial with an id
+// Find a single Inquilino with an id
 exports.findOne = (req, res) => {
   const id = req.params.cpfInquilino;
 
-  Tutorial.findByPk(id)
+  Inquilino.findByPk(id)
     .then(data => {
       res.send(data);
     })
@@ -65,11 +65,11 @@ exports.findOne = (req, res) => {
     });
 };
 
-// Update a Tutorial by the id in the request
+// Update a Inquilino by the id in the request
 exports.update = (req, res) => {
   const id = req.params.cpfInquilino;
 
-  Tutorial.update(req.body, {
+  Inquilino.update(req.body, {
     where: { id: id }
   })
     .then(num => {
@@ -90,11 +90,11 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a Inquilino with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.cpfInquilino;
 
-  Tutorial.destroy({
+  Inquilino.destroy({
     where: { id: id }
   })
     .then(num => {

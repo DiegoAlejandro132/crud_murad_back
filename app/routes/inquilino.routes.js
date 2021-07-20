@@ -24,5 +24,5 @@ module.exports = app => {
     // Delete all inquilinos
     router.delete("/", inquilino.deleteAll);
   
-    app.use('/api/inquilinos', router);
+    app.use('/api/inquilino', router);
   };
