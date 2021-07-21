@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.nomeEndereco) {
+    if (!req.body.nome) {
       res.status(400).send({
         message: "Content can not be empty!"
       });
@@ -14,7 +14,7 @@ exports.create = (req, res) => {
   
     // Create a Tutorial
     const endereco = {
-      nomeEndereco: req.body.nomeEndereco,
+      nomeEndereco: req.body.nome,
       cep: req.body.cep,
       logradouro: req.body.logradouro,
       numero: req.body.numero,

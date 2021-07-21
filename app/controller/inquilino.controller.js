@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.cpfInquilino) {
+    if (!req.body.cpf) {
       res.status(400).send({
         message: "Content can not be empty!"
       });
@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     // Create a Tutorial
     const inquilino = {
       nomeInquilino: req.body.nomeInquilino,
-      cpfInquilino: req.body.cpfInquilino,
+      cpfInquilino: req.body.cpf,
       dataNascimentoInquilino: req.body.dataNascimentoInquilino,
       published: req.body.published ? req.body.published : false
     };
