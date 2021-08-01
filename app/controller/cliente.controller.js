@@ -16,10 +16,12 @@ exports.create = (req, res) => {
     const cliente = {
       nomeCliente: req.body.nome,
       cpfCliente: req.body.cpf,
-      dataNasimentoCliente: req.body.data_nascimento,
+      dataNascimentoCliente: req.body.data_nascimento,
       published: req.body.published ? req.body.published : false
+
     };
   
+    console.log(cliente)
     // Save Tutorial in the database
     Cliente.create(cliente)
       .then(data => {
@@ -35,7 +37,7 @@ exports.create = (req, res) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-  const id = req.query.cpfCliente;
+  const id = req.query.id;
   var condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
 
   Cliente.findAll({ where: condition })
@@ -52,7 +54,7 @@ exports.findAll = (req, res) => {
 
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
-  const id = req.params.cpfCliente;
+  const id = req.params.id;
 
   Tutorial.findByPk(id)
     .then(data => {
